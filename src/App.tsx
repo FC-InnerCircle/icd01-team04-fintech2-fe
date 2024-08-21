@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import "./App.css';
+import "./App.css";
 
 const exampleMsw = async () => {
   const res = await fetch("https://example.com/user");
