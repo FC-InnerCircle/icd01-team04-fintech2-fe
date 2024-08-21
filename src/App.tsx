@@ -1,10 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+const exampleMsw = async () => {
+  const res = await fetch("https://example.com/user");
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error("Error fetching data");
+  }
+
+  return data;
+};
+
 function App() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    exampleMsw();
+  }, []);
+
   return (
     <>
       <div>
