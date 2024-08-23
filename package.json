@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "biome-check": "biome check --write --unsafe",
+    "biome-check": "biome check --write",
     "prepare": "lefthook install",
     "preview": "vite preview",
     "type": "tsc --pretty --noEmit"
@@ -38,8 +38,6 @@
     "vite": "^5.4.1"
   },
   "msw": {
-    "workerDirectory": [
-      "public"
-    ]
+    "workerDirectory": ["public"]
   }
 }
