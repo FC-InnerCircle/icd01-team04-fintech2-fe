@@ -10,4 +10,31 @@ export const router = createBrowserRouter([
       };
     },
   },
+  {
+    path: "/login",
+    lazy: async () => {
+      const { Login } = await import("../pages/login/page");
+      return {
+        Component: Login,
+      };
+    },
+  },
+  {
+    path: "/signup",
+    lazy: async () => {
+      const { Signup } = await import("../pages/signup/page");
+      return {
+        Component: Signup,
+      };
+    },
+  },
+  {
+    path: "/memberaccept",
+    lazy: async () => {
+      const { MemberAccept } = await import("../pages/memberAccept/page");
+      return {
+        Component: MemberAccept,
+      };
+    },
+  },
 ]);
