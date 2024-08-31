@@ -1,3 +1,4 @@
+import { Graph } from "@/components/payment/Graph";
 import {
   Card,
   CardContent,
@@ -72,7 +73,9 @@ export function PaymentPage() {
           <Card className="col-span-4">
             <CardHeader>
               <CardTitle>월별 결제 그래프</CardTitle>
-              <CardDescription>chart</CardDescription>
+              <CardDescription>
+                <Graph />
+              </CardDescription>
             </CardHeader>
 
             <CardContent className="pl-2">{/* chart */}</CardContent>
