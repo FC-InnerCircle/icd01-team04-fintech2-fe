@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import payment from "./payment";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
           };
         },
       },
+      payment,
     ],
   },
   {
