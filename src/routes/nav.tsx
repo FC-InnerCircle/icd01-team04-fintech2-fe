@@ -4,7 +4,9 @@ import {
   CreditCardIcon,
   HomeIcon,
   IdCardIcon,
+  KeyRound,
   type LucideIcon,
+  UserCog,
 } from "lucide-react";
 
 interface NavItem {
@@ -23,6 +25,17 @@ export const CUSTOMER_NAV: NavItem[] = [
     IconComponent: IdCardIcon,
     path: "/api",
   },
+  {
+    label: "고객 승인 관리",
+    IconComponent: UserCog,
+    path: "/memberAccept",
+  },
+  {
+    label: "키 발급 관리",
+    IconComponent: KeyRound,
+    path: "/keyIssuance",
+  },
+
   {
     label: "결제대시보드",
     IconComponent: ChartSplineIcon,
