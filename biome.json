@@ -30,5 +30,14 @@
       "semicolons": "always",
       "trailingCommas": "all"
     }
+  },
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2,
+      "lineWidth": 80,
+      "quoteStyle": "double"
+    },
+    "linter": {}
   }
 }
