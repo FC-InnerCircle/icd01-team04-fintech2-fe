@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import KeyIssuanceRoute from "./keyIssuance";
 import MemberAcceptRoute from "./memeberAcceptRoute";
 import payment from "./payment";
+import costomizing from "./costomizing";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
           };
         },
       },
+      costomizing,
       payment,
       MemberAcceptRoute,
       KeyIssuanceRoute,
