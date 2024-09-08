@@ -78,6 +78,19 @@ li {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+}
+
+a {
+  color: #1e90ff; /* 링크 기본 색상 (다저블루) */
+  text-decoration: none; /* 기본 밑줄 제거 */
+}
+
+a:visited {
+  color: #551a8b; /* 방문한 링크 색상 */
+}
+
+a:hover {
+  color: #ff4500; /* 호버 시 오렌지레드 */
+  text-decoration: underline; /* 호버 시 밑줄 추가 */
 }

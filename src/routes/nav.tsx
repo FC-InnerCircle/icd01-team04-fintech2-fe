@@ -14,6 +14,20 @@ interface NavItem {
   IconComponent: LucideIcon;
   path: string;
 }
+
+export const MANAGE_NAV: NavItem[] = [
+  {
+    label: "API 관리",
+    IconComponent: IdCardIcon,
+    path: "/api",
+  },
+  {
+    label: "고객 관리",
+    IconComponent: UserCog,
+    path: "/memberAccept",
+  },
+];
+
 export const CUSTOMER_NAV: NavItem[] = [
   {
     label: "홈",
@@ -24,11 +38,6 @@ export const CUSTOMER_NAV: NavItem[] = [
     label: "API 관리",
     IconComponent: IdCardIcon,
     path: "/api",
-  },
-  {
-    label: "고객 승인 관리",
-    IconComponent: UserCog,
-    path: "/memberAccept",
   },
   {
     label: "키 발급 관리",
