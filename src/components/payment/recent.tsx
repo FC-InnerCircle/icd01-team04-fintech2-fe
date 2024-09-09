@@ -1,36 +1,44 @@
+const data = [
+  {
+    id: 1,
+    name: "상품명1",
+    date: "2024-09-02T13:48:15.520406+09:00",
+    price: 81000,
+  },
+  {
+    id: 2,
+    name: "상품명2",
+    date: "2024-09-01T10:11:15.510106+09:00",
+    price: 101000,
+  },
+  {
+    id: 3,
+    name: "상품명3",
+    date: "2024-08-30T01:00:00.510106+09:00",
+    price: 12000,
+  },
+];
+
+const locale = "ko-KR";
 export function Recent() {
   return (
     <div className="grid gap-8">
-      <div className="flex items-center gap-4">
-        <div className="grid gap-1">
-          <p className="text-sm font-medium leading-none">상품명1</p>
-          <p className="text-sm text-muted-foreground">2024-09-01 12:00</p>
+      {data.map(({ id, name, date, price }) => (
+        <div key={id} className="flex items-center gap-4">
+          <div className="grid gap-1">
+            <p className="text-sm font-medium leading-none">{name}</p>
+            <p className="text-sm text-muted-foreground">
+              {new Intl.DateTimeFormat(locale, {
+                dateStyle: "long",
+                timeStyle: "medium",
+              }).format(new Date(date))}
+            </p>
+          </div>
+          <div className="ml-auto font-medium">
+            {`${price.toLocaleString(locale)}원`}
+          </div>
         </div>
-        <div className="ml-auto font-medium">+81,000원</div>
-      </div>
-      <div className="flex items-center gap-4">
-        <div className="grid gap-1">
-          <p className="text-sm font-medium leading-none">Jackson Lee</p>
-          <p className="text-sm text-muted-foreground">jackson.lee@email.com</p>
-        </div>
-        <div className="ml-auto font-medium">+$39.00</div>
-      </div>
-      <div className="flex items-center gap-4">
-        <div className="grid gap-1">
-          <p className="text-sm font-medium leading-none">Isabella Nguyen</p>
-          <p className="text-sm text-muted-foreground">
-            isabella.nguyen@email.com
-          </p>
-        </div>
-        <div className="ml-auto font-medium">+$299.00</div>
-      </div>
-      <div className="flex items-center gap-4">
-        <div className="grid gap-1">
-          <p className="text-sm font-medium leading-none">William Kim</p>
-          <p className="text-sm text-muted-foreground">will@email.com</p>
-        </div>
-        <div className="ml-auto font-medium">+$99.00</div>
-      </div>
+      ))}
     </div>
   );
 }
