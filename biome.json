@@ -10,6 +10,9 @@
       "recommended": true,
       "correctness": {
         "noUnusedImports": "error"
+      },
+      "a11y": {
+        "useKeyWithClickEvents": "off"
       }
     }
   },

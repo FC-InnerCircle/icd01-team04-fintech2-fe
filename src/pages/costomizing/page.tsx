@@ -61,16 +61,15 @@ export function Costomizing() {
 
   const onClickCheckBox = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    setState: React.Dispatch<React.SetStateAction<string[]>>
+    setState: React.Dispatch<React.SetStateAction<string[]>>,
   ) => {
     const id = (e.target as HTMLElement).id;
     if (!id) return;
     setState((oldState) => {
       if (isChecked(oldState, id)) {
         return oldState.filter((payMethod) => payMethod !== id);
-      } else {
-        return [...oldState, id];
       }
+      return [...oldState, id];
     });
   };
   return (
