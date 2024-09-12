@@ -12,12 +12,14 @@ export function Signup() {
     initialValues: {
       userId: "",
       password: "",
+      shopName: "",
       label: "",
       file: null, // 파일을 저장할 필드
     },
     validationSchema: Yup.object({
       userId: Yup.string().required("아이디가 필요합니다."),
       password: Yup.string().required("패스워드가 필요합니다."),
+      shopName: Yup.string().required("상표가 필요합니다."),
       label: Yup.string().required("라벨이 필요합니다."),
       file: Yup.mixed().required("파일이 필요합니다."),
     }),
@@ -81,6 +83,23 @@ export function Signup() {
             {formik.touched.password && formik.errors.password ? (
               <div className="text-red-500 text-sm">
                 {formik.errors.password}
+              </div>
+            ) : null}
+          </div>
+          <div className="mb-4">
+            <label className="font-handwritten text-lg mb-2 block">상표</label>
+            <Input
+              type="text"
+              name="shopName"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.shopName}
+              placeholder="상표를 입력해주세요."
+              className="w-full border-2 border-black text-black bg-transparent focus:ring-0 font-handwritten"
+            />
+            {formik.touched.shopName && formik.errors.shopName ? (
+              <div className="text-red-500 text-sm">
+                {formik.errors.shopName}
               </div>
             ) : null}
           </div>

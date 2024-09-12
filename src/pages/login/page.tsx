@@ -1,9 +1,17 @@
+import { LoginStatus } from "@/states/store";
 import { useFormik } from "formik";
+import { useAtom } from "jotai";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 
 export function Login() {
+  const [loginInfo, setIsLoginInfo] = useAtom(LoginStatus);
+  const navigate = useNavigate();
+  const location = useLocation(); // 현재 경로를 가져오는 훅
+
   const formik = useFormik({
     initialValues: {
       userName: "",
@@ -16,8 +24,35 @@ export function Login() {
     onSubmit: (values) => {
       alert("로그인");
       console.log(values);
+      if (values.userName === "incerpay" && values.userPassword === "1234") {
+        setIsLoginInfo({
+          isLoggedIn: true,
+          roll: "superUser",
+          user: {
+            name: "",
+            email: "",
+          },
+        });
+        navigate("/");
+      } else if (values.userName !== "" && values.userPassword !== "") {
+        setIsLoginInfo({
+          isLoggedIn: true,
+          roll: "user",
+          user: {
+            name: "",
+            email: "",
+          },
+        });
+        navigate("/");
+      }
     },
   });
+
+  useEffect(() => {
+    if (loginInfo.isLoggedIn === true) {
+      navigate("/");
+    }
+  }, [loginInfo.isLoggedIn, navigate]);
 
   return (
     <div className="flex h-screen justify-center items-center bg-sketch">
