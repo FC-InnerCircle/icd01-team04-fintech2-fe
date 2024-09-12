@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
+import costomizing from "./costomizing";
 import KeyIssuanceRoute from "./keyIssuance";
 import MemberAcceptRoute from "./memeberAcceptRoute";
 import payment from "./payment";
-import costomizing from "./costomizing";
 
 export const router = createBrowserRouter([
   {
